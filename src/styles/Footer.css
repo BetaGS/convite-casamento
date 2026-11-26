@@ -1,0 +1,8 @@
+.footer {
+  display: grid; justify-items: center; padding: 4.5rem 1.5rem calc(3.5rem + env(safe-area-inset-bottom, 0px));
+  background: var(--coal); color: var(--ivory); text-align: center;
+}
+.footer__mono { font-size: 3.2rem; color: var(--gold); }
+.footer .ornament { margin: 1.5rem 0; }
+.footer__names { margin-bottom: 0.4rem; font-family: var(--serif); font-style: italic; font-size: 1.5rem; }
+.footer .label { color: var(--silver); }

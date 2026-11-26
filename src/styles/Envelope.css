@@ -1,0 +1,101 @@
+.envelope-screen {
+  position: fixed; inset: 0; z-index: 100;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3.5rem;
+  padding-top: 10vh; background: radial-gradient(circle at 50% 35%, #232321, var(--onyx) 70%);
+  color: var(--ivory); transition: opacity 1s ease, visibility 1s;
+}
+.envelope-screen--leaving { opacity: 0; visibility: hidden; pointer-events: none; }
+
+.envelope-screen__foot { display: grid; justify-items: center; gap: 1rem; text-align: center; transition: opacity 0.5s; }
+/* Data com filetes dourados acima e abaixo */
+.envelope-screen__date {
+  padding: 0.55rem 1.75rem; border-top: 1px solid rgba(197, 160, 89, 0.45); border-bottom: 1px solid rgba(197, 160, 89, 0.45);
+  font-family: var(--serif); font-size: 1.6rem; letter-spacing: 0.18em; color: var(--gold-light);
+}
+.envelope-screen__hint { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); }
+.envelope-screen--opening .envelope-screen__foot,
+.envelope-screen--leaving .envelope-screen__foot { opacity: 0; }
+
+.env { padding: 0; border: 0; background: none; cursor: pointer; transition: transform 1s ease, opacity 1s ease; }
+.env--leaving { transform: scale(1.35); opacity: 0; }
+
+/* A perspectiva fica no corpo, pai direto da aba que gira em rotateX */
+.env__body {
+  position: relative; display: block; perspective: 1200px;
+  width: min(86vw, 380px); aspect-ratio: 4 / 3;
+  filter: drop-shadow(0 24px 34px rgba(0, 0, 0, 0.6));
+}
+.env__body > * { position: absolute; display: block; }
+
+.env__back { inset: 0; border-radius: 2px; background: linear-gradient(160deg, #222220, #151514); }
+
+/*
+  Cartão marfim com moldura dupla dourada.
+
+  CAUSA DO BUG: a classe global .frame define "position: relative" e, como global.css é carregado
+  depois deste arquivo, ela vencia o "position: absolute" do cartão. Com position relative, o
+  left/top viravam deslocamentos e o retângulo saía 9% para a direita do envelope.
+  Por isso o seletor abaixo tem especificidade maior (.env__body .env__card) e fixa o position.
+*/
+.env__body .env__card {
+  position: absolute; box-sizing: border-box;
+  z-index: 2; left: 5%; width: 90%; top: 12%; bottom: 10%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.3rem;
+  background: var(--paper); color: var(--ink); text-align: center;
+
+  /* Fechado: totalmente invisível. Só aparece quando a abertura começa */
+  opacity: 0; visibility: hidden;
+  transition: transform 1.2s cubic-bezier(0.22, 0.8, 0.3, 1) 0.8s, opacity 0.5s ease 0.55s, visibility 0s 0.55s;
+}
+.env--opening .env__card { opacity: 1; visibility: visible; transform: translateY(-64%); }
+.env--leaving .env__card {
+  opacity: 0; visibility: visible; transform: translateY(-64%) scale(1.5);
+  transition: transform 1s ease, opacity 0.9s ease;
+}
+.env__card-mono { font-size: 2.2rem; color: var(--gold); }
+.env__card-names { font-family: var(--serif); font-size: 1.15rem; }
+.env__card-date { font-size: 0.62rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold-dark); }
+
+.env__front {
+  z-index: 3; inset: 0; background: linear-gradient(165deg, #252523, #151514);
+  clip-path: polygon(0 0, 50% 56%, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Tampa escura extra: cobre o envelope inteiro enquanto fechado e some quando a aba começa a abrir */
+.env__fill { z-index: 3; inset: -1px; background: #1c1c1b; transition: opacity 0.3s ease 0.55s; }
+.env--opening .env__fill, .env--leaving .env__fill { opacity: 0; }
+
+.env__lines { z-index: 3; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+.env__flap {
+  z-index: 4; top: 0; left: 0; width: 100%; height: 58%;
+  transform-origin: top center; transition: transform 0.9s ease 0.15s, z-index 0s 0.55s;
+}
+.env--opening .env__flap, .env--leaving .env__flap { transform: rotateX(180deg); z-index: 1; }
+
+/* Lacre de cera dourado metálico, com monograma em baixo-relevo */
+.env__seal {
+  z-index: 5; left: 50%; top: 56%; width: 24%; aspect-ratio: 1;
+  display: grid; place-items: center; transform: translate(-50%, -50%);
+  border-radius: 50% 48% 51% 49% / 49% 51% 48% 52%;
+  font-size: clamp(1.3rem, 6vw, 1.9rem); color: #8c6b32;
+  background: radial-gradient(circle at 32% 26%, #dfc286 0%, #c5a059 48%, #8c6b32 100%);
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.6),
+    inset 0 2px 3px rgba(255, 240, 200, 0.55),
+    inset 0 -3px 5px rgba(70, 45, 10, 0.5),
+    inset 0 0 0 5px rgba(140, 107, 50, 0.35);
+  animation: seal-breath 3s ease-in-out infinite;
+  transition: opacity 0.8s ease, scale 0.8s ease, filter 0.8s ease;
+}
+.env__seal::before {
+  content: ""; position: absolute; inset: 11%; border-radius: 50%;
+  border: 1px solid rgba(90, 62, 18, 0.5); box-shadow: 0 1px 0 rgba(255, 236, 190, 0.5), inset 0 1px 0 rgba(255, 236, 190, 0.35);
+}
+.env__seal .mono { text-shadow: 0 1px 0 rgba(255, 236, 190, 0.65), 0 -1px 0 rgba(70, 45, 10, 0.55); }
+.env--opening .env__seal, .env--leaving .env__seal { opacity: 0; scale: 1.25; filter: blur(6px); animation: none; }
+
+@keyframes seal-breath {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.05); }
+}

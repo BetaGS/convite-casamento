@@ -1,0 +1,16 @@
+.events { display: grid; gap: 1.25rem; }
+.events > * { display: flex; }
+.event {
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem; width: 100%;
+  padding: 2.75rem 1.5rem; background: var(--white); text-align: center;
+}
+.event__time { font-family: var(--serif); font-size: 3rem; line-height: 1.1; }
+.event__time--text { font-style: italic; font-size: 2.2rem; }
+.event__date { font-family: var(--serif); font-style: italic; font-size: 1.15rem; color: var(--graphite); }
+.event__place { margin-top: 0.75rem; font-size: 0.85rem; font-weight: 500; }
+.event__desc { max-width: 28ch; margin-bottom: 1.25rem; font-size: 0.85rem; color: var(--graphite); }
+.event .btn { margin-top: auto; }
+
+@media (min-width: 900px) {
+  .events { grid-template-columns: repeat(3, 1fr); }
+}

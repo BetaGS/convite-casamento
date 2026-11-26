@@ -1,0 +1,17 @@
+.lightbox {
+  position: fixed; inset: 0; z-index: 300; display: flex; align-items: center; justify-content: center;
+  background: rgba(14, 14, 14, 0.94); backdrop-filter: blur(6px);
+}
+.lightbox__figure { max-width: 92vw; max-height: 90vh; text-align: center; color: var(--paper); }
+.lightbox__figure img { max-width: 92vw; max-height: 80vh; width: auto; height: auto; margin: 0 auto; object-fit: contain; }
+.lightbox__figure figcaption { margin-top: 1rem; font-size: 0.72rem; letter-spacing: 0.32em; color: var(--gold-light); }
+
+.lightbox__close, .lightbox__nav {
+  position: absolute; border: 0; background: none; color: var(--gold-light); cursor: pointer; line-height: 1;
+  font-family: var(--serif); font-weight: 300; transition: color 0.2s;
+}
+.lightbox__close:hover, .lightbox__nav:hover { color: var(--gold); }
+.lightbox__close { top: 0.6rem; right: 1rem; padding: 0.4rem; font-size: 2.8rem; }
+.lightbox__nav { top: 50%; transform: translateY(-50%); padding: 0.5rem 0.9rem; font-size: 3.2rem; }
+.lightbox__nav--prev { left: 0; }
+.lightbox__nav--next { right: 0; }

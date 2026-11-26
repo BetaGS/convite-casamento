@@ -1,0 +1,44 @@
+.hero { position: relative; min-height: 100svh; display: flex; background: var(--coal); color: var(--ivory); overflow: hidden; }
+
+/* Foto de capa: cobre toda a tela, enquadrando um pouco acima do centro */
+.hero__bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+
+/* Overlay escuro suave: mais denso no topo (texto sobre o céu) e na base (mensagem e contador) */
+.hero__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(20, 20, 20, 0.55) 0%, rgba(20, 20, 20, 0.22) 38%, rgba(20, 20, 20, 0.3) 55%, rgba(20, 20, 20, 0.78) 100%);
+}
+
+/* Moldura dupla dourada sobre a foto (a especificidade vence o position: relative de .frame) */
+.hero .hero__frame { position: absolute; inset: 0.75rem; border-color: rgba(197, 160, 89, 0.75); pointer-events: none; }
+
+.hero__content {
+  position: relative; z-index: 1; width: 100%; max-width: 760px; margin: 0 auto;
+  display: flex; flex-direction: column; justify-content: space-between; gap: 2rem;
+  padding: 4.5rem 1.75rem 3rem; text-align: center;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.45);
+}
+
+.hero .label { color: var(--gold-light); }
+.hero__names {
+  display: flex; flex-direction: column; align-items: center; margin: 0.5rem 0 1.1rem;
+  font-family: var(--serif); font-weight: 400; font-size: clamp(3.2rem, 15vw, 5.8rem); line-height: 0.95; color: var(--ivory);
+}
+.hero__amp { font-style: italic; font-size: 0.55em; color: var(--gold-light); }
+.hero__date { font-family: var(--serif); font-style: italic; font-size: 1.7rem; color: var(--ivory); }
+
+.hero .ornament { margin: 0 0 1.25rem; color: var(--gold-light); }
+.hero__msg { max-width: 44ch; margin: 0 auto 1.75rem; font-family: var(--serif); font-style: italic; font-size: 1.15rem; line-height: 1.6; color: var(--ivory); }
+
+/* Contador separado por filetes verticais dourados */
+.hero__countdown { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 460px; margin: 0 auto; }
+.hero__unit { padding: 0.25rem 0; }
+.hero__unit + .hero__unit { border-left: 1px solid rgba(223, 194, 134, 0.55); }
+.hero__unit strong { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(2rem, 10vw, 2.9rem); line-height: 1.1; font-variant-numeric: tabular-nums; color: var(--gold-light); }
+.hero__unit .label { font-size: 0.58rem; letter-spacing: 0.22em; }
+.hero__today { font-family: var(--serif); font-style: italic; font-size: 2rem; color: var(--gold-light); }
+
+@media (min-width: 900px) {
+  .hero .hero__frame { inset: 1.25rem; }
+  .hero__content { padding: 5.5rem 2rem 4rem; }
+}

@@ -1,0 +1,107 @@
+:root {
+  /* Fundos */
+  --onyx: #141414;      /* preto carvão suave */
+  --coal: #1c1c1c;
+  --paper: #faf8f5;     /* marfim quente */
+  --paper-deep: #f3eee4;/* marfim levemente mais profundo, para alternar seções */
+  --white: #ffffff;     /* cards */
+
+  /* Textos */
+  --ink: #1c1c1c;
+  --graphite: #5e584d;
+  --ivory: #f5f2eb;     /* texto sobre fundo escuro */
+
+  /* Dourados */
+  --gold: #c5a059;
+  --gold-light: #dfc286;
+  --gold-dark: #9a7b3e;
+  --gold-line: rgba(197, 160, 89, 0.45);
+  --platinum: #e6dcc3;  /* champanhe claro (texto discreto sobre escuro) */
+  --silver: var(--gold);
+
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Montserrat", system-ui, sans-serif;
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--sans); font-size: 15px; line-height: 1.7; -webkit-font-smoothing: antialiased;
+}
+
+/* Grain de papel sobre todo o site */
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: 999; pointer-events: none;
+  background-image: var(--grain); opacity: 0.07;
+}
+
+img { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+/* ---------- Faixas e seções ---------- */
+.band--paper { background: var(--paper); }
+.band--white { background: var(--paper-deep); }
+.band--dark { background: var(--onyx); color: var(--ivory); }
+
+.section { max-width: 1080px; margin: 0 auto; padding: 5.5rem 1.5rem; }
+.section--narrow { max-width: 640px; }
+
+.section__title {
+  font-family: var(--serif); font-style: italic; font-weight: 400;
+  font-size: clamp(2.5rem, 11vw, 4rem); line-height: 1.05; text-align: center;
+}
+.band--dark .section__title { color: var(--ivory); }
+
+.label {
+  font-family: var(--sans); font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold-dark);
+}
+.band--dark .label { color: var(--gold-light); }
+
+.ornament { display: flex; justify-content: center; margin: 1.75rem 0 2.5rem; color: var(--gold); }
+
+/* ---------- Moldura dupla fina dourada ---------- */
+.frame { position: relative; border: 1px solid var(--gold); }
+.frame::before { content: ""; position: absolute; inset: 6px; border: 1px solid var(--gold-line); pointer-events: none; }
+
+/* ---------- Monograma ---------- */
+.mono { display: inline-flex; align-items: baseline; font-family: var(--serif); font-style: italic; line-height: 1; }
+.mono__l { font-size: 1em; }
+.mono__l:first-child { margin-right: -0.14em; }
+.mono__l:last-child { margin-left: -0.14em; }
+.mono__amp { position: relative; z-index: 1; font-size: 0.5em; font-style: normal; opacity: 0.9; }
+
+/* ---------- Botões: preto fosco com borda e texto dourados ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 1.75rem;
+  border: 1px solid var(--gold); background: var(--onyx); color: var(--gold-light);
+  font-family: var(--sans); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase;
+  text-decoration: none; text-align: center; cursor: pointer;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+.btn:hover { background: var(--gold); border-color: var(--gold); color: var(--onyx); }
+.btn--ghost { background: transparent; color: var(--gold-dark); }
+.btn--ghost:hover { background: var(--gold); color: var(--onyx); }
+
+/* Sobre fundo escuro: dourado fosco com texto escuro */
+.band--dark .btn { background: var(--gold); border-color: var(--gold); color: var(--onyx); }
+.band--dark .btn:hover { background: var(--gold-light); border-color: var(--gold-light); color: var(--onyx); }
+.band--dark .btn--ghost { background: transparent; color: var(--ivory); }
+.band--dark .btn--ghost:hover { background: var(--gold); border-color: var(--gold); color: var(--onyx); }
+
+/* ---------- Reveal ao rolar ---------- */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.reveal--in { opacity: 1; transform: none; }
+
+@media (min-width: 768px) {
+  .section { padding: 8rem 2rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; transition-delay: 0s !important; }
+}
