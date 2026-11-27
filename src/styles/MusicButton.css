@@ -1,9 +1,0 @@
-.music {
-  position: fixed; z-index: 200;
-  top: calc(env(safe-area-inset-top, 0px) + 0.9rem); right: 0.9rem;
-  width: 40px; height: 40px; display: grid; place-items: center;
-  border: 1px solid var(--gold); border-radius: 50%;
-  background: rgba(20, 20, 20, 0.75); backdrop-filter: blur(6px);
-  color: var(--gold-light); cursor: pointer; transition: background 0.3s, color 0.3s;
-}
-.music:hover, .music--on { background: var(--gold); color: var(--onyx); border-color: var(--gold); }

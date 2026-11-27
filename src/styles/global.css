@@ -28,7 +28,7 @@
 }
 
 /* Sobre fundos escuros, a cor de destaque vira branco */
-.band--dark, .hero, .footer, .envelope-screen, .music, .lightbox {
+.band--dark, .hero, .footer, .envelope-screen, .lightbox {
   --gold: #ffffff;
   --gold-light: #ffffff;
   --gold-dark: #ffffff;

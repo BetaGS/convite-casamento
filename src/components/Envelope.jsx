@@ -5,7 +5,7 @@ import Monogram from "./Monogram";
 import "../styles/Envelope.css";
 
 // closed -> opening (selo se desfaz, aba abre, cartão sobe) -> leaving (cartão expande, tela some) -> onOpened()
-export default function Envelope({ onOpened, onStart }) {
+export default function Envelope({ onOpened }) {
   const [stage, setStage] = useState("closed");
   const { couple, date } = weddingData;
 
@@ -25,11 +25,7 @@ export default function Envelope({ onOpened, onStart }) {
       <button
         type="button"
         className={`env env--${stage}`}
-        onClick={() => {
-          if (stage !== "closed") return;
-          onStart?.(); // inicia a música no próprio toque, único momento em que o navegador permite
-          setStage("opening");
-        }}
+        onClick={() => stage === "closed" && setStage("opening")}
         aria-label="Abrir o convite"
       >
         <span className="env__body">

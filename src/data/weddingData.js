@@ -43,9 +43,6 @@ const weddingData = {
   // Foto de capa (hero): foto-11 tem espaço de céu acima do casal para o texto
   heroPhoto: "/images/foto-1.jpg",
 
-  // Música de fundo (opcional). Use "" para esconder o botão. Arquivo em public/audio/
-  music: "/audio/razaodaminhavida.mp3",
-
 
 
   // Fotos da galeria (retrato): foto-2.jpg até foto-10.jpg. Adicione ou remova à vontade.
