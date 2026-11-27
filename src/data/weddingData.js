@@ -20,7 +20,7 @@ const weddingData = {
     title: "Rodízio & Buffet",
     time: "18:00",
     durationHours: 1.5,
-    description: "Rodízio de carnes com serviço à mesa e buffet liberado, com repetição à vontade.",
+    description: "Comemoração por adesão (cada convidado será responsável pelo seu consumo). O restaurante oferece rodízio completo por R$ 220 por pessoa e também trabalha com a opção de buffet a quilo.",
   },
 
   // [EDITAR] Local, endereço e coordenadas
@@ -36,7 +36,7 @@ const weddingData = {
   dressCode: {
     title: "Traje",
     value: "Dress code",
-    note: "Para tornar este momento ainda mais harmonioso, pedimos que todos os convidados compareçam com traje social totalmente preto (All Black). Evite estampas e cores claras. O branco fica reservado exclusivamente para a noiva.",
+    note: "Para tornar este momento ainda mais harmonioso, pedimos que todos os convidados compareçam com traje social totalmente preto (All Black). Evite estampas e cores claras.",
   },
 
  // Mensagem dos noivos (aparece no topo do site)
