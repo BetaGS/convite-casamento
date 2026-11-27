@@ -42,7 +42,7 @@ const weddingData = {
   dressCode: {
     title: "Traje",
     value: "Dress code",
-    note: "Roupa social totalmente preta",
+    note: "Para tornar este momento ainda mais harmonioso, pedimos que todos os convidados compareçam com traje social totalmente preto (All Black). Evite estampas e cores claras. O branco fica reservado exclusivamente para a noiva.",
   },
 
  // Mensagem dos noivos (aparece no topo do site)
@@ -52,7 +52,7 @@ const weddingData = {
   heroPhoto: "/images/foto-1.jpg",
 
   // Música de fundo (opcional). Use "" para esconder o botão. Arquivo em public/audio/
-  music: "/audio/musica.mp3",
+  music: "public/audio/razaodaminhavida.mp3",
 
 
 
@@ -62,12 +62,12 @@ const weddingData = {
     alt: `Foto ${i + 1} do ensaio de João e Karine`,
   })),
 
-  // Envio do RSVP. mode: "whatsapp" | "api" | "sheets" | "console"
+  // Confirmação de presença: botão que abre o WhatsApp dos noivos com a mensagem pronta
   rsvp: {
-    mode: "whatsapp",
-    whatsappNumber: "5521999999999", // [EDITAR] DDI + DDD + número, só dígitos
-    endpoint: "", // usado nos modos "api" e "sheets"
-    deadline: "15 de dezembro de 2026", // [EDITAR]
+    whatsappNumber: "5521971214041", // [EDITAR] DDI + DDD + número, só dígitos
+    message: "Olá! Gostaria de confirmar minha presença no casamento de João e Karine, no dia 16 de janeiro de 2027. Meu nome é ", // [EDITAR] o convidado completa com o nome
+    buttonLabel: "Confirmar pelo WhatsApp",
+    deadline: "20 de dezembro de 2026", // [EDITAR]
   },
 
   // Presentes
