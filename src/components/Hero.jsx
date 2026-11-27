@@ -31,8 +31,6 @@ export default function Hero() {
       <div className="hero__content">
         {/* Topo: sobre o céu da foto */}
         <div className="hero__top">
-          <Reveal delay={200}><p className="label">Save the date</p></Reveal>
-
           <Reveal delay={350}>
             <h1 className="hero__names">
               <span>{couple.groom}</span>

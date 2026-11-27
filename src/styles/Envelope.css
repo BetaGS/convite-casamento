@@ -9,7 +9,7 @@
 .envelope-screen__foot { display: grid; justify-items: center; gap: 1rem; text-align: center; transition: opacity 0.5s; }
 /* Data com filetes dourados acima e abaixo */
 .envelope-screen__date {
-  padding: 0.55rem 1.75rem; border-top: 1px solid rgba(197, 160, 89, 0.45); border-bottom: 1px solid rgba(197, 160, 89, 0.45);
+  padding: 0.55rem 1.75rem; border-top: 1px solid rgba(255, 255, 255, 0.45); border-bottom: 1px solid rgba(255, 255, 255, 0.45);
   font-family: var(--serif); font-size: 1.6rem; letter-spacing: 0.18em; color: var(--gold-light);
 }
 .envelope-screen__hint { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); }
@@ -42,6 +42,7 @@
   z-index: 2; left: 5%; width: 90%; top: 12%; bottom: 10%;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.3rem;
   background: var(--paper); color: var(--ink); text-align: center;
+  --gold: #111111; --gold-dark: #111111; --gold-line: rgba(0, 0, 0, 0.35);
 
   /* Fechado: totalmente invisível. Só aparece quando a abertura começa */
   opacity: 0; visibility: hidden;
@@ -78,21 +79,21 @@
   z-index: 5; left: 50%; top: 56%; width: 24%; aspect-ratio: 1;
   display: grid; place-items: center; transform: translate(-50%, -50%);
   border-radius: 50% 48% 51% 49% / 49% 51% 48% 52%;
-  font-size: clamp(1.3rem, 6vw, 1.9rem); color: #8c6b32;
-  background: radial-gradient(circle at 32% 26%, #dfc286 0%, #c5a059 48%, #8c6b32 100%);
+  font-size: clamp(1.3rem, 6vw, 1.9rem); color: #3a3a3a;
+  background: radial-gradient(circle at 32% 26%, #ffffff 0%, #cfcfcf 48%, #8a8a8a 100%);
   box-shadow:
     0 4px 10px rgba(0, 0, 0, 0.6),
-    inset 0 2px 3px rgba(255, 240, 200, 0.55),
-    inset 0 -3px 5px rgba(70, 45, 10, 0.5),
-    inset 0 0 0 5px rgba(140, 107, 50, 0.35);
+    inset 0 2px 3px rgba(255, 255, 255, 0.8),
+    inset 0 -3px 5px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 5px rgba(0, 0, 0, 0.22);
   animation: seal-breath 3s ease-in-out infinite;
   transition: opacity 0.8s ease, scale 0.8s ease, filter 0.8s ease;
 }
 .env__seal::before {
   content: ""; position: absolute; inset: 11%; border-radius: 50%;
-  border: 1px solid rgba(90, 62, 18, 0.5); box-shadow: 0 1px 0 rgba(255, 236, 190, 0.5), inset 0 1px 0 rgba(255, 236, 190, 0.35);
+  border: 1px solid rgba(0, 0, 0, 0.4); box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 }
-.env__seal .mono { text-shadow: 0 1px 0 rgba(255, 236, 190, 0.65), 0 -1px 0 rgba(70, 45, 10, 0.55); }
+.env__seal .mono { text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7), 0 -1px 0 rgba(0, 0, 0, 0.5); }
 .env--opening .env__seal, .env--leaving .env__seal { opacity: 0; scale: 1.25; filter: blur(6px); animation: none; }
 
 @keyframes seal-breath {

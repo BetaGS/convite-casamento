@@ -47,7 +47,7 @@ export default function Envelope({ onOpened, onStart }) {
 
           {/* Filetes prata: costuras do envelope e margem interna */}
           <svg className="env__lines" viewBox="0 0 400 300" preserveAspectRatio="none" aria-hidden="true">
-            <g fill="none" stroke="#C5A059" strokeOpacity="0.45" strokeWidth="1" vectorEffect="non-scaling-stroke">
+            <g fill="none" stroke="#FFFFFF" strokeOpacity="0.45" strokeWidth="1" vectorEffect="non-scaling-stroke">
               <rect x="9" y="9" width="382" height="282" vectorEffect="non-scaling-stroke" />
               <path d="M0 300 L200 168 L400 300" vectorEffect="non-scaling-stroke" />
             </g>
@@ -60,8 +60,8 @@ export default function Envelope({ onOpened, onStart }) {
                 <stop offset="1" stopColor="#171716" />
               </linearGradient>
             </defs>
-            <polygon points="0,0 400,0 200,174" fill="url(#flapGrad)" stroke="#C5A059" strokeOpacity="0.45" vectorEffect="non-scaling-stroke" />
-            <polygon points="18,0 382,0 200,152" fill="none" stroke="#C5A059" strokeOpacity="0.3" vectorEffect="non-scaling-stroke" />
+            <polygon points="0,0 400,0 200,174" fill="url(#flapGrad)" stroke="#FFFFFF" strokeOpacity="0.45" vectorEffect="non-scaling-stroke" />
+            <polygon points="18,0 382,0 200,152" fill="none" stroke="#FFFFFF" strokeOpacity="0.3" vectorEffect="non-scaling-stroke" />
           </svg>
 
           <span className="env__seal"><Monogram /></span>

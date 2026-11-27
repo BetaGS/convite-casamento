@@ -31,7 +31,7 @@ function EventCard({ event, delay }) {
 }
 
 export default function Events() {
-  const { ceremony, reception, dressCode } = weddingData;
+  const { ceremony, dressCode } = weddingData;
   return (
     <section className="band--paper" id="programacao">
       <div className="section">
@@ -39,8 +39,7 @@ export default function Events() {
         <Ornament />
         <div className="events">
           <EventCard event={ceremony} delay={0} />
-          <EventCard event={reception} delay={150} />
-          <Reveal delay={300}>
+          <Reveal delay={150}>
             <article className="event frame">
               <h3 className="label">{dressCode.title}</h3>
               <p className="event__time event__time--text">{dressCode.value}</p>

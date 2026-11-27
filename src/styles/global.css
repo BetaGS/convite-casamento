@@ -1,27 +1,38 @@
 :root {
   /* Fundos */
-  --onyx: #141414;      /* preto carvão suave */
-  --coal: #1c1c1c;
-  --paper: #faf8f5;     /* marfim quente */
-  --paper-deep: #f3eee4;/* marfim levemente mais profundo, para alternar seções */
-  --white: #ffffff;     /* cards */
+  --onyx: #0b0b0b;       /* preto das faixas escuras */
+  --coal: #141414;       /* preto do rodapé e do fundo da capa */
+  --paper: #ffffff;      /* branco das seções claras */
+  --paper-deep: #f4f4f4; /* branco levemente acinzentado (seção do mapa); use #ffffff para branco puro */
+  --white: #ffffff;      /* cards */
 
   /* Textos */
-  --ink: #1c1c1c;
-  --graphite: #5e584d;
-  --ivory: #f5f2eb;     /* texto sobre fundo escuro */
+  --ink: #111111;
+  --graphite: #555555;
+  --ivory: #ffffff;      /* texto sobre fundo escuro */
 
-  /* Dourados */
-  --gold: #c5a059;
-  --gold-light: #dfc286;
-  --gold-dark: #9a7b3e;
-  --gold-line: rgba(197, 160, 89, 0.45);
-  --platinum: #e6dcc3;  /* champanhe claro (texto discreto sobre escuro) */
-  --silver: var(--gold);
+  /*
+    Cor de destaque (bordas, linhas, ícones, botões, monograma).
+    Os nomes --gold* foram mantidos para não mexer em todos os arquivos, mas agora guardam
+    preto (sobre fundo claro) e branco (sobre fundo escuro, veja o bloco logo abaixo).
+  */
+  --gold: #111111;
+  --gold-light: #ffffff;
+  --gold-dark: #111111;
+  --gold-line: rgba(0, 0, 0, 0.35);
+  --platinum: #d9d9d9;   /* texto discreto sobre fundo escuro */
 
   --serif: "Cormorant Garamond", Georgia, serif;
   --sans: "Montserrat", system-ui, sans-serif;
   --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Sobre fundos escuros, a cor de destaque vira branco */
+.band--dark, .hero, .footer, .envelope-screen, .music, .lightbox {
+  --gold: #ffffff;
+  --gold-light: #ffffff;
+  --gold-dark: #ffffff;
+  --gold-line: rgba(255, 255, 255, 0.45);
 }
 
 * { box-sizing: border-box; margin: 0; }
@@ -64,7 +75,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 .ornament { display: flex; justify-content: center; margin: 1.75rem 0 2.5rem; color: var(--gold); }
 
-/* ---------- Moldura dupla fina dourada ---------- */
+/* ---------- Moldura dupla fina ---------- */
 .frame { position: relative; border: 1px solid var(--gold); }
 .frame::before { content: ""; position: absolute; inset: 6px; border: 1px solid var(--gold-line); pointer-events: none; }
 
@@ -75,23 +86,24 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .mono__l:last-child { margin-left: -0.14em; }
 .mono__amp { position: relative; z-index: 1; font-size: 0.5em; font-style: normal; opacity: 0.9; }
 
-/* ---------- Botões: preto fosco com borda e texto dourados ---------- */
+/* ---------- Botões ---------- */
+/* Sobre fundo claro: preto com texto branco; no hover inverte */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 1.75rem;
-  border: 1px solid var(--gold); background: var(--onyx); color: var(--gold-light);
+  border: 1px solid var(--ink); background: var(--ink); color: #ffffff;
   font-family: var(--sans); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase;
   text-decoration: none; text-align: center; cursor: pointer;
   transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
-.btn:hover { background: var(--gold); border-color: var(--gold); color: var(--onyx); }
-.btn--ghost { background: transparent; color: var(--gold-dark); }
-.btn--ghost:hover { background: var(--gold); color: var(--onyx); }
+.btn:hover { background: #ffffff; color: var(--ink); }
+.btn--ghost { background: transparent; color: var(--ink); }
+.btn--ghost:hover { background: var(--ink); color: #ffffff; }
 
-/* Sobre fundo escuro: dourado fosco com texto escuro */
-.band--dark .btn { background: var(--gold); border-color: var(--gold); color: var(--onyx); }
-.band--dark .btn:hover { background: var(--gold-light); border-color: var(--gold-light); color: var(--onyx); }
-.band--dark .btn--ghost { background: transparent; color: var(--ivory); }
-.band--dark .btn--ghost:hover { background: var(--gold); border-color: var(--gold); color: var(--onyx); }
+/* Sobre fundo escuro: branco com texto preto; no hover inverte */
+.band--dark .btn { background: #ffffff; border-color: #ffffff; color: var(--onyx); }
+.band--dark .btn:hover { background: transparent; color: #ffffff; }
+.band--dark .btn--ghost { background: transparent; border-color: rgba(255, 255, 255, 0.6); color: #ffffff; }
+.band--dark .btn--ghost:hover { background: #ffffff; border-color: #ffffff; color: var(--onyx); }
 
 /* ---------- Reveal ao rolar ---------- */
 .reveal { opacity: 0; transform: translateY(26px); transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1); }

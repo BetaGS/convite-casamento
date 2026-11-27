@@ -20,13 +20,7 @@ const weddingData = {
     title: "Rodízio & Buffet",
     time: "18:00",
     durationHours: 1.5,
-    description: "Rodízio de carnes: os garçons passam nas mesas oferecendo diferentes cortes, como picanha uruguaia, ancho, costela, cordeiro e outros. Buffet liberado: você pode se servir de saladas, queijos, comida japonesa, carpaccio e frutos do mar.",
-  },
-  reception: {
-    title: "Serviço à Mesa",
-    time: "18:00",
-    durationHours: 5,
-    description: "Serviço à mesa: as carnes são servidas diretamente pelos garçons. Repetição à vontade: você pode comer quantas vezes quiser durante o rodízio.",
+    description: "Rodízio de carnes com serviço à mesa e buffet liberado, com repetição à vontade.",
   },
 
   // [EDITAR] Local, endereço e coordenadas
