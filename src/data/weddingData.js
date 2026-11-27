@@ -65,7 +65,7 @@ const weddingData = {
   // Confirmação de presença: botão que abre o WhatsApp dos noivos com a mensagem pronta
   rsvp: {
     whatsappNumber: "5521971214041", // [EDITAR] DDI + DDD + número, só dígitos
-    message: "Olá! Gostaria de confirmar minha presença no casamento de João e Karine, no dia 16 de janeiro de 2027. Meu nome é ", // [EDITAR] o convidado completa com o nome
+    message: "Olá! Gostaria de confirmar minha presença no casamento de João e Karine, no dia 16 de janeiro de 2027. Meu nome é [SEU NOME] ", // [EDITAR] o convidado completa com o nome
     buttonLabel: "Confirmar pelo WhatsApp",
     deadline: "20 de dezembro de 2026", // [EDITAR]
   },
