@@ -20,7 +20,7 @@ const weddingData = {
     title: "Rodízio & Buffet",
     time: "18:00",
     durationHours: 1.5,
-    description: "Comemoração por adesão (cada convidado será responsável pelo seu consumo). O restaurante oferece rodízio completo por R$ 220 por pessoa e também trabalha com a opção de buffet a quilo.",
+    description: "Comemoração por adesão (cada convidado será responsável pelo seu consumo). O restaurante oferece rodízio completo por 245 + 13% por pessoa e também trabalha com a opção de buffet a quilo.",
   },
 
   // [EDITAR] Local, endereço e coordenadas
@@ -39,9 +39,7 @@ const weddingData = {
     note: "Para tornar este momento ainda mais harmonioso, pedimos que todos os convidados compareçam com traje social totalmente preto (All Black). Evite estampas e cores claras.",
   },
 
- // Mensagem dos noivos (aparece no topo do site)
-  message:
-    'Mateus 19:6: "Assim, eles já não são dois, mas sim uma só carne. Portanto, o que Deus uniu ninguém o separe."',
+
   // Foto de capa (hero): foto-11 tem espaço de céu acima do casal para o texto
   heroPhoto: "/images/foto-1.jpg",
 
