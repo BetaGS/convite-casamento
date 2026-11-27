@@ -1,4 +1,0 @@
-.gift__inner { display: grid; justify-items: center; gap: 1.75rem; text-align: center; }
-.gift__text { max-width: 38ch; font-family: var(--serif); font-style: italic; font-size: 1.35rem; }
-.gift__box { display: grid; justify-items: center; gap: 0.9rem; width: 100%; padding: 2.5rem 1.25rem; background: var(--paper); }
-.gift__key { max-width: 100%; overflow-wrap: anywhere; font-family: var(--sans); font-size: 1rem; font-weight: 500; }

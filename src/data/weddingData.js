@@ -5,7 +5,7 @@
 
 const weddingData = {
   couple: {
-    groom: "João Pedro",
+    groom: "João",
     bride: "Karine",
     initials: "J & K",
   },
@@ -15,67 +15,51 @@ const weddingData = {
   utcOffset: "-03:00",
   timeZone: "America/Sao_Paulo",
 
-  // [EDITAR] Horários HH:MM e duração (em horas) usada no Google Agenda
+ // [EDITAR] Horários HH:MM e duração (em horas) usada no Google Agenda
   ceremony: {
-    title: "Cerimônia",
-    time: "16:30",
+    title: "Rodízio & Buffet",
+    time: "18:00",
     durationHours: 1.5,
-    description: "Pedimos que cheguem com 20 minutos de antecedência.",
+    description: "Rodízio de carnes: os garçons passam nas mesas oferecendo diferentes cortes, como picanha uruguaia, ancho, costela, cordeiro e outros. Buffet liberado: você pode se servir de saladas, queijos, comida japonesa, carpaccio e frutos do mar.",
   },
   reception: {
-    title: "Recepção",
+    title: "Serviço à Mesa",
     time: "18:00",
     durationHours: 5,
-    description: "Jantar, música e celebração.",
+    description: "Serviço à mesa: as carnes são servidas diretamente pelos garçons. Repetição à vontade: você pode comer quantas vezes quiser durante o rodízio.",
   },
 
   // [EDITAR] Local, endereço e coordenadas
   venue: {
-    name: "Espaço Jardim das Oliveiras",
-    address: "Rua das Flores, 123, Centro, Rio de Janeiro - RJ",
-    lat: -22.9068,
-    lng: -43.1729,
-    mapsUrl: "", // opcional: cole o link do Google Maps para o botão "Abrir no Google Maps"
+    name: "Rio Brasa",
+    address: "Av. Borges de Medeiros, 829 – Lagoa. Rio de Janeiro – RJ",
+    lat: -22.97976898898659,
+    lng: -43.2163747764705,
+    mapsUrl: "https://maps.app.goo.gl/GRLzX9nBZ76tkKfbA", // opcional: cole o link do Google Maps para o botão "Abrir no Google Maps"
   },
 
   // [EDITAR] Traje
   dressCode: {
     title: "Traje",
-    value: "Social completo",
-    note: "Sugerimos tons sóbrios e escuros. Pedimos que evitem o branco.",
+    value: "Dress code",
+    note: "Roupa social totalmente preta",
   },
 
-  // Mensagem dos noivos (aparece no topo do site)
+ // Mensagem dos noivos (aparece no topo do site)
   message:
-    "Com muito amor, queremos compartilhar com vocês a data em que celebraremos o início de uma nova etapa das nossas vidas. Reservem essa data para viver esse momento tão especial conosco.",
-
+    'Mateus 19:6: "Assim, eles já não são dois, mas sim uma só carne. Portanto, o que Deus uniu ninguém o separe."',
   // Foto de capa (hero): foto-11 tem espaço de céu acima do casal para o texto
-  heroPhoto: "/images/foto-11.jpg",
+  heroPhoto: "/images/foto-1.jpg",
 
   // Música de fundo (opcional). Use "" para esconder o botão. Arquivo em public/audio/
   music: "/audio/musica.mp3",
 
-  // [EDITAR] Nossa história: texto, citação e linha do tempo
-  story: {
-    title: "Nossa história",
-    photo: { src: "/images/foto-1.jpg", alt: "João Pedro e Karine" },
-    paragraphs: [
-      "Nos conhecemos em um dia comum, e nada nele parecia especial até a primeira conversa.",
-      "De lá para cá, foram viagens, domingos em família e planos que viraram rotina. Agora queremos começar essa nova etapa com quem esteve conosco em cada capítulo.",
-    ],
-    quote: "O melhor lugar do mundo é ao lado de quem a gente ama.",
-    timeline: [
-      { when: "2019", text: "Nos conhecemos" },
-      { when: "2022", text: "Fomos morar juntos" },
-      { when: "2025", text: "O pedido" },
-      { when: "2027", text: "O sim" },
-    ],
-  },
+
 
   // Fotos da galeria (retrato): foto-2.jpg até foto-10.jpg. Adicione ou remova à vontade.
   gallery: Array.from({ length: 9 }, (_, i) => ({
     src: `/images/foto-${i + 2}.jpg`,
-    alt: `Foto ${i + 1} do ensaio de João Pedro e Karine`,
+    alt: `Foto ${i + 1} do ensaio de João e Karine`,
   })),
 
   // Envio do RSVP. mode: "whatsapp" | "api" | "sheets" | "console"
