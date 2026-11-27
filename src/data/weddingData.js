@@ -52,7 +52,7 @@ const weddingData = {
   heroPhoto: "/images/foto-1.jpg",
 
   // Música de fundo (opcional). Use "" para esconder o botão. Arquivo em public/audio/
-  music: "public/audio/razaodaminhavida.mp3",
+  music: "/audio/razaodaminhavida.mp3",
 
 
 
